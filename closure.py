@@ -40,6 +40,29 @@ def foo():
 def foo_err():
     a = 1
     def bar():
-        a = a + 1
+        nonlocal a
+        a = a +1
         return a
     return bar
+
+# 当闭包执行完后，仍然能够保持住当前的运行环境
+def create(pos=[0,0]):
+    def player(direction, step):
+        nonlocal pos
+        new_x = pos[0] + direction[0]*step
+        new_y = pos[1] + direction[1]*step
+        # pos[0] = new_x
+        # pos[1] = new_y
+        pos = [new_x, new_y]
+        return pos
+    return player
+
+# 闭包可以根据外部作用域的局部变量来得到不同的结果
+def make_filter(keep):
+    def the_filter(file_name):
+        file = open(file_name)
+        lines = file.readlines()
+        file.close()
+        filter_doc = [i for i in lines if keep in i]
+        return filter_doc
+    return the_filter
