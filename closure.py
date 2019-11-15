@@ -1,5 +1,6 @@
 # 闭包
 # 返回闭包时牢记一点：返回函数不要引用任何循环变量，或者后续会发生变化的变量
+# https://blog.csdn.net/marty_fu/article/details/7679297
 def count():
     fs = []
     for i in range(1,5):
