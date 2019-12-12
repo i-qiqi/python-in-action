@@ -1,0 +1,36 @@
+version: 1
+formatters:
+  simple:
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  fsimple:
+    format: '%(asctime)s - %(pathname)s[line:%(lineno)d] - %(levelname)s: %(message)s'
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+    stream: ext://sys.stdout
+  console_err:
+    class: logging.StreamHandler
+    level: ERROR
+    formatter: simple
+    stream: ext://sys.stderr
+  file:
+    class: logging.handlers.RotatingFileHandler
+    filename: new.log
+    level: DEBUG
+    # when: D
+    # filemode: a
+    formatter: fsimple
+loggers:
+  file_example:
+    level: DEBUG
+    handlers: [file]
+    propagate: no
+  console_example:
+    level: DEBUG
+    handlers: [console_err]
+    propagate: no 
+root:
+  level: DEBUG
+  handlers: [file, console, console_err]
