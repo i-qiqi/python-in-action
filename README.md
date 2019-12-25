@@ -22,3 +22,8 @@
 
 ### 参考
 - [Jupyter documentation](https://jupyter.org/documentation)
+- [Python3-cookbook](https://python3-cookbook.readthedocs.io/zh_CN/latest/preface.html)
+- [ZH奶酪：编程语言入门经典100例【Python版】](https://www.cnblogs.com/CheeseZH/archive/2012/11/05/2755107.html)
+- [爬虫教程](https://cuiqingcai.com/1052.html)
+- [数据分析资料](https://zhuanlan.zhihu.com/p/69869004)
+- [HelloGithub](https://github.com/521xueweihan/HelloGitHub)
